@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, except: %i[ index  ]
   before_action :set_project, only: %i[ show edit update destroy ]
 
   # GET /projects or /projects.json
