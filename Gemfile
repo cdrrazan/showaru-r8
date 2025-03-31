@@ -64,7 +64,7 @@ group :test do
   gem "selenium-webdriver"
 
   # Custom Gems for development/test
-  gem "rspec-rails", "~> 6.0"  # RSpec for Rails
+  gem "rspec-rails", "~> 7.0.0"  # RSpec for Rails
   gem "factory_bot_rails"  # Fixtures replacement (optional)
   gem "faker"  # Generates fake data for tests (optional)
   gem "database_cleaner"  # Ensures a clean database state between tests
