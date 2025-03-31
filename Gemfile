@@ -62,6 +62,13 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+
+  # Custom Gems for development/test
+  gem "rspec-rails", "~> 6.0"  # RSpec for Rails
+  gem "factory_bot_rails"  # Fixtures replacement (optional)
+  gem "faker"  # Generates fake data for tests (optional)
+  gem "database_cleaner"  # Ensures a clean database state between tests
 end
 
+# Custom Gems
 gem "devise", "~> 4.9"
