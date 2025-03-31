@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :account
   has_one :dashboard
+  has_one :subscription
   has_many :projects
 end
