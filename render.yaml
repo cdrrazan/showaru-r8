@@ -1,20 +1,20 @@
-# Exported from Render on 2025-04-03T13:08:48Z
+databases:
+  - name: showaru
+    databaseName: showaru
+    user: showaru
+    plan: free
+
 services:
-- type: web
-  name: showaru
-  runtime: ruby
-  repo: https://github.com/cdrrazan/Showaru-rails
-  plan: free
-  envVars:
-  - key: RAILS_MASTER_KEY
-    sync: false
-  - key: WEB_CONCURRENCY
-    sync: false
-  - key: DATABASE_URL
-    sync: false
-  region: oregon
-  buildCommand: ./bin/render-build.sh
-  startCommand: bundle exec rails server
-  domains:
-  - showaru.rsynk.com
-version: "1"
+  - type: web
+    plan: free
+    name: showaru
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: showaru
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
